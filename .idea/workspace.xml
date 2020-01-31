@@ -14,6 +14,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1X9r0DnyWQD1y1bncsBhOkc2wOd" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -24,9 +27,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -39,6 +44,7 @@
       <option name="presentableId" value="Default" />
       <updated>1580468925243</updated>
       <workItem from="1580468930025" duration="371000" />
+      <workItem from="1580469400866" duration="1979000" />
     </task>
     <servers />
   </component>
@@ -50,5 +56,21 @@
       <screen x="0" y="0" width="1504" height="963" />
     </state>
     <state x="345" y="141" key="#Project_Structure/0.0.1504.963@0.0.1504.963" timestamp="1580468966191" />
+    <state x="558" y="198" key="#com.intellij.ide.util.MemberChooser" timestamp="1580471219670">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state x="558" y="198" key="#com.intellij.ide.util.MemberChooser/0.0.1504.963@0.0.1504.963" timestamp="1580471219670" />
+    <state x="533" y="237" key="FileChooserDialogImpl" timestamp="1580469780165">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state x="533" y="237" key="FileChooserDialogImpl/0.0.1504.963@0.0.1504.963" timestamp="1580469780165" />
+    <state x="254" y="125" key="SettingsEditor" timestamp="1580469795258">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state x="254" y="125" key="SettingsEditor/0.0.1504.963@0.0.1504.963" timestamp="1580469795258" />
+    <state x="415" y="206" width="672" height="678" key="search.everywhere.popup" timestamp="1580470471077">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state x="415" y="206" width="672" height="678" key="search.everywhere.popup/0.0.1504.963@0.0.1504.963" timestamp="1580470471077" />
   </component>
 </project>
