@@ -10,6 +10,7 @@ public class Flight {
     private int maxWeight;
     private int maxVolume;
     private List<Passenger> passengerList;
+    private double excessFees;
 
     public Flight(String flightCode, String destination, String carrier, int maxPassenger, int maxWeight, int maxVolume) {
         this.flightCode = flightCode;
@@ -30,9 +31,9 @@ public class Flight {
 
     /*Will get the total weights from each of the passengers on the
     * flight and sum them for use in the report*/
-    public List<Double> sumFlightSize(){
+    public double sumFlightSize(){
         //to do
-        return new ArrayList<>();
+        return 0.0;
     }
 
     /*Will generate a report on the flight based on:
@@ -55,6 +56,7 @@ public class Flight {
     }
 
     //Auto generated getters and setters
+
     public String getFlightCode() {
         return flightCode;
     }
@@ -101,5 +103,13 @@ public class Flight {
 
     public void setMaxVolume(int maxVolume) {
         this.maxVolume = maxVolume;
+    }
+
+    public double getExcessFees() {
+        return excessFees;
+    }
+
+    public void setExcessFees(double excessFees) {
+        this.excessFees = excessFees;
     }
 }

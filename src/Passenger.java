@@ -40,13 +40,14 @@ public class Passenger {
 
 
     /*Will sum up the total size of all the baggage this passenger has*/
-    public List<Double> totalSize(){
+    public double totalSize(){
         //to do
-        return new ArrayList<>();
+        return 0.0;
     }
 
 
     //Auto generated getter and setters
+
     public String getBookingReference() {
         return bookingReference;
     }
