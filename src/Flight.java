@@ -105,6 +105,10 @@ public class Flight {
         this.maxVolume = maxVolume;
     }
 
+    public void addPassenger(Passenger p){
+        this.passengerList.add(p);
+    }
+
     public double getExcessFees() {
         return excessFees;
     }

@@ -9,12 +9,12 @@ public class Passenger {
     private Boolean checkedIn;
     private List<Bag> baggage;
 
-    public Passenger(String bookingReference, String lastName, String firstNames, String flightCode) {
+    public Passenger(String bookingReference, String lastName, String firstNames, String flightCode, Boolean checkedIn) {
         this.bookingReference = bookingReference;
         this.lastName = lastName;
         this.firstNames = firstNames;
         this.flightCode = flightCode;
-        checkedIn = false;
+        this.checkedIn = checkedIn;
     }
 
 
@@ -28,7 +28,7 @@ public class Passenger {
 
     /*Creates new bag object
     * Adds new bag to list in passenger*/
-    public void addBag(){
+    public void addBag(Bag b){
         //to do
     }
 

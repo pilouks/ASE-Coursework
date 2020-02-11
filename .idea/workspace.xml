@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a654c44-2cca-4ffb-8e89-995f7be611f6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/FlightData" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PassengerData" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Airport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Airport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Bag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CheckInGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CheckInGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Flight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Flight.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Passenger.java" afterDir="false" />
     </list>
@@ -40,6 +40,20 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
+  <component name="RunManager">
+    <configuration name="Airport" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Airport" />
+      <module name="ASECoursework" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Airport" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -53,7 +67,7 @@
       <workItem from="1580468930025" duration="371000" />
       <workItem from="1580469400866" duration="2267000" />
       <workItem from="1580731623140" duration="2733000" />
-      <workItem from="1581422872689" duration="2706000" />
+      <workItem from="1581422872689" duration="10449000" />
     </task>
     <servers />
   </component>
@@ -65,6 +79,10 @@
       <screen x="0" y="0" width="1504" height="963" />
     </state>
     <state x="345" y="141" key="#Project_Structure/0.0.1504.963@0.0.1504.963" timestamp="1580468966191" />
+    <state x="512" y="285" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581428981808">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state x="512" y="285" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1504.963@0.0.1504.963" timestamp="1581428981808" />
     <state x="558" y="198" key="#com.intellij.ide.util.MemberChooser" timestamp="1581424065412">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
@@ -73,13 +91,29 @@
       <screen x="0" y="0" width="1504" height="963" />
     </state>
     <state x="533" y="237" key="FileChooserDialogImpl/0.0.1504.963@0.0.1504.963" timestamp="1580469780165" />
+    <state width="1461" height="256" key="GridCell.Tab.0.bottom" timestamp="1581430459947">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state width="1461" height="256" key="GridCell.Tab.0.bottom/0.0.1504.963@0.0.1504.963" timestamp="1581430459947" />
+    <state width="1461" height="256" key="GridCell.Tab.0.center" timestamp="1581430459947">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state width="1461" height="256" key="GridCell.Tab.0.center/0.0.1504.963@0.0.1504.963" timestamp="1581430459947" />
+    <state width="1461" height="256" key="GridCell.Tab.0.left" timestamp="1581430459946">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state width="1461" height="256" key="GridCell.Tab.0.left/0.0.1504.963@0.0.1504.963" timestamp="1581430459946" />
+    <state width="1461" height="256" key="GridCell.Tab.0.right" timestamp="1581430459947">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state width="1461" height="256" key="GridCell.Tab.0.right/0.0.1504.963@0.0.1504.963" timestamp="1581430459947" />
     <state x="254" y="125" key="SettingsEditor" timestamp="1580469795258">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
     <state x="254" y="125" key="SettingsEditor/0.0.1504.963@0.0.1504.963" timestamp="1580469795258" />
-    <state x="415" y="206" width="672" height="678" key="search.everywhere.popup" timestamp="1581424667530">
+    <state x="415" y="206" width="672" height="678" key="search.everywhere.popup" timestamp="1581428098942">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
-    <state x="415" y="206" width="672" height="678" key="search.everywhere.popup/0.0.1504.963@0.0.1504.963" timestamp="1581424667530" />
+    <state x="415" y="206" width="672" height="678" key="search.everywhere.popup/0.0.1504.963@0.0.1504.963" timestamp="1581428098942" />
   </component>
 </project>
