@@ -19,6 +19,7 @@ public class Flight {
         this.maxPassenger = maxPassenger;
         this.maxWeight = maxWeight;
         this.maxVolume = maxVolume;
+        excessFees = 0.0;
         passengerList = new ArrayList<Passenger>();
     }
 
@@ -31,6 +32,13 @@ public class Flight {
         	Passenger passenger = passengerList.get(i);
         	totalFlightWeight += passenger.totalWeight();
         }
+        try {
+        	if (totalFlightWeight > maxWeight){
+        		throw new Exception("Flight is over its max baggage weight!");
+        	}
+			}catch (Exception e){
+				e.printStackTrace();
+		}
         return totalFlightWeight;
     }
 
@@ -42,6 +50,13 @@ public class Flight {
         	Passenger passenger = passengerList.get(i);
         	totalFlightSize += passenger.totalSize();
         }
+    	try {
+    		if (totalFlightSize > maxVolume){
+    			throw new Exception("Flight is over its max baggage volume!");
+    		}
+		}catch (Exception e){
+			e.printStackTrace();
+		}
         return totalFlightSize;
     }
 
@@ -54,10 +69,16 @@ public class Flight {
     * Will auto format the report into a single string for writing to file*/
     public String report(){
         String report = "";
-        report += "FLIGHT REPORT" + "/b";
-        report += "- Number of passengers checked in: " + passengerList.size() + "/b";
-        report += "- Total wight of baggage on flight: " + sumFlightWeight() + "/b";
-        report += "- Total size of baggage on flight: " + sumFlightSize() + "/b";
+        report += "FLIGHT REPORT" + "\n";
+        report += "- Number of passengers checked in: " + passengerList.size() + "\n";
+        report += "- Total weight of baggage on flight: " + sumFlightWeight() + "\n";
+        report += "- Total size of baggage on flight: " + sumFlightSize() + "\n";
+        report += "- Total excess fees: " + excessFees + "\n";
+        if (passengerList.size() > maxPassenger){
+        	report += "FLIGHT IS OVER CAPACITY!" + "\n";
+        }else{
+        	report += "flight is within capacity" + "\n";
+        }
         return report;
     }
 
@@ -67,8 +88,8 @@ public class Flight {
     public void checkInToFlight(Passenger passenger){
     	try{
     		if (passengerList.size() < maxPassenger){
-    			passengerList.add(passenger);
     			passenger.CheckIn();
+    			passengerList.add(passenger);
     		} else {
     			throw new Exception("flight is at max capacity!");
     		}
