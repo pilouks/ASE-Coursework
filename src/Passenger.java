@@ -21,8 +21,10 @@ public class Passenger {
     /*Changes check in status to true
     * Throws error if already checked in
     * Use custom exception*/
-    public void CheckIn(){
+    public void CheckIn() throws Exception{
         //to do
+    	
+    	throw new Exception("Already checked in");
     }
 
 
