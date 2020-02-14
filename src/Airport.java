@@ -124,8 +124,10 @@ public class Airport {
             }
         } catch(FileNotFoundException e) {
             System.out.println("FLight data file not found\n" + e);
+            System.exit(0);
         } catch(IOException e){
             e.printStackTrace();
+            System.exit(0);
         } finally {
             try{
                 br.close();

@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a654c44-2cca-4ffb-8e89-995f7be611f6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Airport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Airport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CheckInGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CheckInGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Flight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Flight.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +64,7 @@
       <workItem from="1580731623140" duration="2733000" />
       <workItem from="1581422872689" duration="10529000" />
       <workItem from="1581608340136" duration="365000" />
-      <workItem from="1581678200980" duration="4993000" />
+      <workItem from="1581678200980" duration="5319000" />
     </task>
     <servers />
   </component>
