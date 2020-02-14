@@ -85,11 +85,12 @@ public class Flight {
     /*Will take a passenger with their baggage already added and
     * add to the flights list of passengers then set the passenger
     * check in status to true*/
-    public void checkInToFlight(Passenger passenger){
+    public void checkInToFlight(Passenger passenger, double fees){
     	try{
     		if (passengerList.size() < maxPassenger){
     			passenger.CheckIn();
     			passengerList.add(passenger);
+    			excessFees += fees;
     		} else {
     			throw new Exception("flight is at max capacity!");
     		}

@@ -21,9 +21,12 @@ public class CheckInGUI {
         return "";
     }
 
-    /*Will ask user for bag dimensions and weight
+    /*Will ask user if they want to add a bag
+    * if yes then ask user
+    * for bag dimensions and weight
     * convert x,y,z dimensions to m^3 volume
-    * pass back volume, weight*/
+    * pass back volume, weight
+    * if no then pass back -1*/
     public List<Double> getPassengerBagInfo(){
         //to do
         return new ArrayList<>();
