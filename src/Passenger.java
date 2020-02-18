@@ -22,8 +22,9 @@ public class Passenger {
     * Throws error if already checked in
     * Use custom exception*/
     public void CheckIn() throws Exception{
-        //to do
-    	
+        if(checkedIn==false) {
+        	checkedIn=true;
+        }
     	throw new Exception("Already checked in");
     }
 
@@ -31,20 +32,26 @@ public class Passenger {
     /*Creates new bag object
     * Adds new bag to list in passenger*/
     public void addBag(Bag b){
-        //to do
+        baggage.add(b);
     }
 
     /*Will sum the total weight of all the baggage this passenger has*/
     public double totalWeight(){
-        //to do
-        return 0.0;
+    	double totalWeight=0.0;
+    	for (Bag num : baggage) {
+    		totalWeight += num.getWeight();
+       }
+        return totalWeight;
     }
 
 
     /*Will sum up the total size of all the baggage this passenger has*/
     public double totalSize(){
-        //to do
-        return 0.0;
+    	double totalSize=0.0;
+    	for (Bag num : baggage) {
+    		totalSize += num.getSize();
+       }
+        return totalSize;
     }
 
 
