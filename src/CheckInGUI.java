@@ -1,3 +1,14 @@
+
+
+/*
+
+
+I NEED TO REFACTOR IT CAUSE ITS MESSY
+AND I NEED TO COMMENT IT ALL OUT
+
+
+
+*/
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -9,27 +20,48 @@ import javax.swing.*;
 public class CheckInGUI {
 
 	public enum Scene {
-		CHECKIN, USERINFO, BAGCHECK, BAGS, ERROR1, ERROR2, EXIT, RETURN
+		CHECKIN, USERINFO, BAGCHECK, BAGS, ERROR1, ERROR2, RETURN, EXIT
 	}
 
 	static Scene scene = Scene.CHECKIN;
 
-	int width = 300;
-	int height = 300;
+	int width = 400;
+	int height = 400;
 
 	JFrame frame = new JFrame("GUI");
+	
 	JButton checkIn = new JButton("Check In");
 	JButton exit = new JButton("Exit");
-	JButton noBags = new JButton("No Bags");
+	JButton noBags = new JButton("No Bag");
 	JButton enterBagInfo = new JButton("Enter Bag Info");
 	JButton enter = new JButton("Enter");
 	JButton retry = new JButton("Retry");
+	JButton confirm = new JButton("Confirm");
+	
+	JTextArea weightkgTag = new JTextArea("Bag weight (kg)");
 	JTextArea error = new JTextArea();
-
+	JTextArea bagxTag = new JTextArea("Bag width (cm)");
+	JTextArea bagyTag = new JTextArea("Bag height (cm)");
+	JTextArea bagzTag = new JTextArea("Bag depth (cm)");
+	JTextArea surnameTag = new JTextArea("Passenger Surname:");
+	JTextArea referenceTag = new JTextArea("Flight Reference:");
+	
+	JTextField bagx = new JTextField();
+	JTextField bagy = new JTextField();
+	JTextField bagz = new JTextField();
+	JTextField weightkg = new JTextField();
+	
+	
 	static JTextField surname = new JTextField();
 	static JTextField reference = new JTextField();
+	
 	static String surnameText;
 	static String referenceText;
+	
+	static double bag_x;
+	static double bag_y;
+	static double bag_z;
+	static double bag_kg;
 
 	public CheckInGUI() {
 	}
@@ -44,17 +76,29 @@ public class CheckInGUI {
 		frame.setLayout(null);
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
 		setupListener();
 
 		checkIn.setBounds(width / 4, height / 4, width / 2, height / 5);
 		exit.setBounds(width / 4, 2 * height / 4, width / 2, height / 5);
 		noBags.setBounds(width / 4, height / 4, width / 2, height / 5);
-		enterBagInfo.setBounds(width / 4, 2 * height / 4, width / 2, height / 5);
+		enterBagInfo.setBounds(width / 4, 2*height / 4, width / 2, height / 5);
 		surname.setBounds(width / 4, height / 5, width / 2, height / 5 - 20);
 		reference.setBounds(width / 4, 2 * height / 5, width / 2, height / 5 - 20);
 		enter.setBounds(width / 4, 3 * height / 5, width / 2, height / 5 - 20);
 		error.setBounds(width / 8, height / 4, 3*width / 4, height / 8);
-		retry.setBounds(width / 4, 2*height / 4, width / 2, height / 5);
+		retry.setBounds(width / 4, 2*height / 4, width / 2, height / 5);		
+		surnameTag.setBounds(width / 4, height / 5-20, width / 2, height / 5 - 20);
+		referenceTag.setBounds(width / 4, 2 * height / 5 - 20, width / 2, height / 5 - 20);		
+		bagxTag.setBounds(width/4, 2*height/10-17, width/4, height/15);
+		bagyTag.setBounds(width/4, 3*height/10-17, width/4, height/15);
+		bagzTag.setBounds(width/4, 4*height/10-17, width/4, height/15);
+		bagx.setBounds(width/4, 2*height/10, width/4, height/15);
+		bagy.setBounds(width/4, 3*height/10, width/4, height/15);
+		bagz.setBounds(width/4, 4*height/10, width/4, height/15);	
+		weightkg.setBounds(2*width/4+20, 2*height/10, width/4, height/15);
+		weightkgTag.setBounds(2*width/4+20, 2*height/10-17, width/4, height/15);	
+		confirm.setBounds(width/2+20, height/2, width/4, height/8);
 	}
 
 	/*
@@ -64,23 +108,23 @@ public class CheckInGUI {
 	 */
 	public String getUserInput() {
 		paintScene();
-		while (!(scene == Scene.EXIT) || !(scene == Scene.RETURN)) {
+		while (!(scene == Scene.EXIT)&&!(scene == Scene.RETURN)) {
 			try {
 				Thread.sleep(10);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			if (scene == Scene.EXIT) {
-				return "exit";
-			}
-			if (scene == Scene.RETURN) {
-				String info = referenceText + " , " + surnameText;
-				return info;
-			}
 		}
-
+		if(scene == Scene.RETURN) {
+			String info = referenceText + " , " + surnameText;
+			return info;
+		}
+		if(scene == Scene.EXIT) {
+			return "exit";
+		}
 		return "";
+		
 	}
 
 	private void paintScene() {
@@ -104,18 +148,23 @@ public class CheckInGUI {
 				frame.getContentPane().add(surname);
 				frame.getContentPane().add(reference);
 				frame.getContentPane().add(enter);
+				frame.add(surnameTag);
+				frame.add(referenceTag);
 				break;
 			case BAGCHECK:
 				frame.getContentPane().add(noBags);
 				frame.getContentPane().add(enterBagInfo);
 				break;
 			case BAGS:
-				frame.getContentPane().add(noBags);
-				frame.getContentPane().add(enterBagInfo);
-				break;
-			case RETURN:
-				break;
-			case EXIT:
+				frame.getContentPane().add(bagx);
+				frame.getContentPane().add(bagy);
+				frame.getContentPane().add(bagz);
+				frame.getContentPane().add(bagxTag);
+				frame.getContentPane().add(bagyTag);
+				frame.getContentPane().add(bagzTag);
+				frame.add(weightkg);
+				frame.add(weightkgTag);
+				frame.add(confirm);
 				break;
 		}
 		
@@ -138,7 +187,7 @@ public class CheckInGUI {
 					frame.getContentPane().removeAll();
 					surnameText = surname.getText();
 					referenceText = reference.getText();
-					scene = Scene.BAGCHECK;
+					scene = Scene.RETURN;
 				}
 				if(e.getSource()==retry) {
 					surname.setText("");
@@ -150,11 +199,20 @@ public class CheckInGUI {
 					frame.getContentPane().removeAll();
 					surname.setText("");
 					reference.setText("");
-					scene = Scene.USERINFO;
+					bag_x = -1.0;
+					scene = Scene.CHECKIN;
 				}
 				if(e.getSource()==enterBagInfo) {
 					frame.getContentPane().removeAll();
 					scene = Scene.BAGS;
+				}
+				if(e.getSource()==confirm) {
+					frame.getContentPane().removeAll();
+					bag_x = Double.parseDouble(bagx.getText());
+					bag_y = Double.parseDouble(bagy.getText());
+					bag_z = Double.parseDouble(bagz.getText());
+					bag_kg = Double.parseDouble(weightkg.getText());
+					scene = Scene.BAGCHECK;
 				}
 				
 				paintScene();
@@ -170,6 +228,7 @@ public class CheckInGUI {
 		retry.addActionListener(Listener);
 		noBags.addActionListener(Listener);
 		enterBagInfo.addActionListener(Listener);
+		confirm.addActionListener(Listener);
 
 	}
 
@@ -181,9 +240,40 @@ public class CheckInGUI {
 	public List<Double> getPassengerBagInfo() {
 		
 		
+		scene = Scene.BAGCHECK;
 		paintScene();
 		
-		return new ArrayList<>();
+		while (scene==Scene.BAGCHECK) {
+			try {
+				Thread.sleep(10);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		paintScene();
+		while (scene==Scene.BAGS) {
+			try {
+				Thread.sleep(10);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		if(bag_x==-1.0) {
+			List<Double> hold = new ArrayList<Double>();
+			hold.add(-1.0);
+			return hold;
+		}
+		double bagx_=bag_x/100;
+		double bagy_=bag_y/100;
+		double bagz_=bag_z/100;
+		double volume = bagx_*bagy_*bagz_;
+		
+		List<Double> hold = new ArrayList<Double>();
+		hold.add(volume);
+		hold.add(bag_kg);
+		return hold;
 	}
 
 	/*
