@@ -1,4 +1,5 @@
-import java.util.ArrayList;
+package checkIn;
+
 import java.util.List;
 
 public class Passenger {

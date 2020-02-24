@@ -1,3 +1,5 @@
+package checkIn;
+
 import java.util.List;
 
 public class Bag {

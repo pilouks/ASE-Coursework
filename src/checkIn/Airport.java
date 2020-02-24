@@ -1,3 +1,5 @@
+package checkIn;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -127,7 +129,7 @@ public class Airport {
                 inputLine = br.readLine();                          //read next line
             }
         } catch (FileNotFoundException e) {
-            System.out.println("Passenger data file not found\n" + e);
+            System.out.println("checkIn.Passenger data file not found\n" + e);
             System.exit(0);
         } catch (IOException e) {
             e.printStackTrace();
