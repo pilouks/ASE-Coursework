@@ -1,5 +1,6 @@
 package checkIn;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Passenger {
@@ -16,17 +17,18 @@ public class Passenger {
         this.firstNames = firstNames;
         this.flightCode = flightCode;
         this.checkedIn = checkedIn;
+        baggage = new ArrayList<>();
     }
 
 
     /*Changes check in status to true
     * Throws error if already checked in
     * Use custom exception*/
-    public void CheckIn() throws Exception{
+    public void CheckIn() throws CheckInException{
         if(checkedIn==false) {
         	checkedIn=true;
         }
-    	throw new Exception("Already checked in");
+    	throw new CheckInException(this.bookingReference);
     }
 
 

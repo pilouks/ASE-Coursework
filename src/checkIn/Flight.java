@@ -85,7 +85,7 @@ public class Flight {
 			passengerList.add(passenger);
 			excessFees += fees;
     	}catch (Exception e){
-    		e.printStackTrace();
+            System.out.println(e.getMessage());
     	}
     }
 

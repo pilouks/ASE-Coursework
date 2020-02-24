@@ -1,28 +1,32 @@
 package tests;
 
-import org.junit.Before;
-import org.junit.jupiter.api.*;
+import checkIn.Bag;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
 
 
 class BagTest {
 
-    @Before
+    Bag b;
+
+    @BeforeEach
     void setUp() {
+        b = new Bag(10.0, 10.0);
     }
 
     @Test
-    void getSize() {
+    void sizeTest() {
+        assertEquals(b.getSize(), 10.0);
+        b.setSize(20.0);
+        assertEquals(b.getSize(), 20.0);
     }
 
     @Test
-    void setSize() {
-    }
-
-    @Test
-    void getWeight() {
-    }
-
-    @Test
-    void setWeight() {
+    void weightTest() {
+        assertEquals(b.getWeight(), 10.0);
+        b.setWeight(20.0);
+        assertEquals(b.getWeight(), 20.0);
     }
 }
