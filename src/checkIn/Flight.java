@@ -84,7 +84,7 @@ public class Flight {
 			passenger.CheckIn();
 			passengerList.add(passenger);
 			excessFees += fees;
-    	}catch (Exception e){
+    	}catch (CheckInException e){
             System.out.println(e.getMessage());
     	}
     }

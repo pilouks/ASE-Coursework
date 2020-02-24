@@ -37,14 +37,15 @@ class FlightTest {
 
     @Test
     void testSumming(){
-        assertEquals(f.sumFlightSize(),21);
-        assertEquals(f.sumFlightWeight(), 210);
+        assertEquals(21, f.sumFlightSize());
+        assertEquals(210, f.sumFlightWeight());
     }
 
     @Test
     void testCheckIn(){
         Passenger p = new Passenger("HO53639615JA", "Horgan", "Jamie Caldwell", "ED1235",false);
+        assertFalse(p.getCheckedIn());
         f.checkInToFlight(p,100);
-        assertEquals(f.getExcessFees(), 100);
+        assertEquals(100, f.getExcessFees());
     }
 }

@@ -32,7 +32,7 @@ class PassengerTest {
         p.addBag(b2);
         p.addBag(b3);
 
-        assertEquals(p.totalWeight(), 60);
-        assertEquals(p.totalSize(), 6);
+        assertEquals(60, p.totalWeight());
+        assertEquals(6, p.totalSize());
     }
 }

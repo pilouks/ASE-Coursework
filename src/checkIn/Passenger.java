@@ -27,8 +27,9 @@ public class Passenger {
     public void CheckIn() throws CheckInException{
         if(checkedIn==false) {
         	checkedIn=true;
+        } else {
+            throw new CheckInException(this.bookingReference);
         }
-    	throw new CheckInException(this.bookingReference);
     }
 
 

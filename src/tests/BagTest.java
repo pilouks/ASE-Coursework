@@ -18,15 +18,15 @@ class BagTest {
 
     @Test
     void sizeTest() {
-        assertEquals(b.getSize(), 10.0);
+        assertEquals(10, b.getSize());
         b.setSize(20.0);
-        assertEquals(b.getSize(), 20.0);
+        assertEquals(20, b.getSize());
     }
 
     @Test
     void weightTest() {
-        assertEquals(b.getWeight(), 10.0);
+        assertEquals(10, b.getWeight());
         b.setWeight(20.0);
-        assertEquals(b.getWeight(), 20.0);
+        assertEquals(20, b.getWeight());
     }
 }
