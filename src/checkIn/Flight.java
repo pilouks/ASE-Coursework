@@ -35,9 +35,14 @@ public class Flight {
         passengerList = new ArrayList<Passenger>();
     }
 
-    private Boolean invalidFlightCode(String code){
+    public Boolean invalidFlightCode(String code){
         if(code.length() == 6){
-            if(Character.isLetter(code.charAt(0)) && Character.isLetter(code.charAt(1))){
+            if(Character.isLetter(code.charAt(0)) &&
+                    Character.isLetter(code.charAt(1)) &&
+                    Character.isDigit(code.charAt(2)) &&
+                    Character.isDigit(code.charAt(3)) &&
+                    Character.isDigit(code.charAt(4)) &&
+                    Character.isDigit(code.charAt(5))){
                 return false;
             }
         }

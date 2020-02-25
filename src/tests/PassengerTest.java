@@ -36,4 +36,17 @@ class PassengerTest {
         assertEquals(60, p.totalWeight());
         assertEquals(6, p.totalSize());
     }
+
+    @Test
+    void testValidRef(){
+        String validRef = "AB12345678CD";
+        String invalidLength = "EF1234GH";
+        String invalidLetters = "123456789011";
+        String asparaginase = "asparaginase";
+
+        assertFalse(p.invalidBookingReference(validRef));
+        assertTrue(p.invalidBookingReference(invalidLength));
+        assertTrue(p.invalidBookingReference(invalidLetters));
+        assertTrue(p.invalidBookingReference(asparaginase));
+    }
 }

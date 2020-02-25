@@ -49,4 +49,17 @@ class FlightTest {
         f.checkInToFlight(p,100);
         assertEquals(100, f.getExcessFees());
     }
+
+    @Test
+    void testValidCode(){
+        String validCode = "AB1234";
+        String invalidLength = "AB123";
+        String invalidLetters = "123456";
+        String pickle = "Pickle";
+
+        assertFalse(f.invalidFlightCode(validCode));
+        assertTrue(f.invalidFlightCode(invalidLength));
+        assertTrue(f.invalidFlightCode(invalidLetters));
+        assertTrue(f.invalidFlightCode(pickle));
+    }
 }

@@ -24,9 +24,20 @@ public class Passenger {
         baggage = new ArrayList<>();
     }
 
-    private Boolean invalidBookingReference(String ref){
+    public Boolean invalidBookingReference(String ref){
         if(ref.length() == 12){
-            if(Character.isLetter(ref.charAt(0)) && Character.isLetter(ref.charAt(1)) && Character.isLetter(ref.charAt(10)) && Character.isLetter(ref.charAt(11))){
+            if(Character.isLetter(ref.charAt(0)) &&
+                    Character.isLetter(ref.charAt(1)) &&
+                    Character.isDigit(ref.charAt(2)) &&
+                    Character.isDigit(ref.charAt(3)) &&
+                    Character.isDigit(ref.charAt(4)) &&
+                    Character.isDigit(ref.charAt(5)) &&
+                    Character.isDigit(ref.charAt(6)) &&
+                    Character.isDigit(ref.charAt(7)) &&
+                    Character.isDigit(ref.charAt(8)) &&
+                    Character.isDigit(ref.charAt(9)) &&
+                    Character.isLetter(ref.charAt(10)) &&
+                    Character.isLetter(ref.charAt(11))){
                 return false;
             }
         }
