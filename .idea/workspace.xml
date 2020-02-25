@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a654c44-2cca-4ffb-8e89-995f7be611f6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/checkIn/InvalidDataException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/checkIn/Airport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/checkIn/Airport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/checkIn/CheckInGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/checkIn/CheckInGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/checkIn/Flight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/checkIn/Flight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/checkIn/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/checkIn/Passenger.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +139,7 @@
       <workItem from="1582039018690" duration="340000" />
       <workItem from="1582133817177" duration="274000" />
       <workItem from="1582546476126" duration="7369000" />
-      <workItem from="1582628431994" duration="503000" />
+      <workItem from="1582628431994" duration="3509000" />
     </task>
     <servers />
   </component>

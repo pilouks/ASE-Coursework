@@ -14,8 +14,12 @@ public class Flight {
     private List<Passenger> passengerList;
     private double excessFees;
 
-    public Flight(String flightCode, String destination, String carrier, int maxPassenger, int maxWeight, int maxVolume) {
-        this.flightCode = flightCode;
+    public Flight(String flightCode, String destination, String carrier, int maxPassenger, int maxWeight, int maxVolume) throws InvalidDataException {
+        if(invalidFlightCode(flightCode)){
+            throw new InvalidDataException("Flight code: "+ flightCode + " is invalid");
+        } else {
+            this.flightCode = flightCode;
+        }
         this.destination = destination;
         this.carrier = carrier;
         this.maxPassenger = maxPassenger;
@@ -23,6 +27,15 @@ public class Flight {
         this.maxVolume = maxVolume;
         excessFees = 0.0;
         passengerList = new ArrayList<Passenger>();
+    }
+
+    private Boolean invalidFlightCode(String code){
+        if(code.length() == 6){
+            if(Character.isLetter(code.charAt(0)) && Character.isLetter(code.charAt(1))){
+                return false;
+            }
+        }
+        return true;
     }
 
 

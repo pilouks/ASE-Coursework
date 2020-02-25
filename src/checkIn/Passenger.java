@@ -11,13 +11,26 @@ public class Passenger {
     private Boolean checkedIn;
     private List<Bag> baggage;
 
-    public Passenger(String bookingReference, String lastName, String firstNames, String flightCode, Boolean checkedIn) {
-        this.bookingReference = bookingReference;
+    public Passenger(String bookingReference, String lastName, String firstNames, String flightCode, Boolean checkedIn) throws InvalidDataException {
+        if(invalidBookingReference(bookingReference)){
+            throw new InvalidDataException("The booking reference: " + bookingReference + " is invalid.");
+        } else {
+            this.bookingReference = bookingReference;
+        }
         this.lastName = lastName;
         this.firstNames = firstNames;
         this.flightCode = flightCode;
         this.checkedIn = checkedIn;
         baggage = new ArrayList<>();
+    }
+
+    private Boolean invalidBookingReference(String ref){
+        if(ref.length() == 12){
+            if(Character.isLetter(ref.charAt(0)) && Character.isLetter(ref.charAt(1)) && Character.isLetter(ref.charAt(10)) && Character.isLetter(ref.charAt(11))){
+                return false;
+            }
+        }
+        return true;
     }
 
 

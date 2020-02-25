@@ -87,8 +87,13 @@ public class Airport {
                 for (int i = 0; i < data.length; i++) {
                     data[i] = data[i].trim();                       //trim off white space
                 }
-                Flight f = new Flight(data[0], data[1], data[2], Integer.parseInt(data[3]), Integer.parseInt(data[4]), Integer.parseInt(data[5])); //make new flight object using read data
-                planes.put(data[0], f);                             //put the flight in the map with flight code as ref
+                try {
+                    Flight f = new Flight(data[0], data[1], data[2], Integer.parseInt(data[3]), Integer.parseInt(data[4]), Integer.parseInt(data[5])); //make new flight object using read data
+                    planes.put(data[0], f);                             //put the flight in the map with flight code as ref
+                } catch (InvalidDataException e){
+                    System.out.println("Could not create flight.\n" + e.getMessage());
+                    System.exit(0);
+                }
                 inputLine = br.readLine();                          //read the next line
             }
         } catch (FileNotFoundException e) {
@@ -106,6 +111,7 @@ public class Airport {
         }
     }
 
+
     /*Will read in passenger data from file
      * and store within passenger map waitingRoom*/
     private void readPassengerData(String fileName) {
@@ -121,11 +127,16 @@ public class Airport {
                     data[i] = data[i].trim();                       //trim off white space
                 }
                 Boolean checked = Boolean.parseBoolean(data[4]);    //make checked in into boolean
-                Passenger p = new Passenger(data[0], data[1], data[2], data[3], checked); //create new passenger from line info
-                if (checked) {                                      //if they've already checked in
-                    planes.get(data[3]).addPassenger(p);            //add directly to the flight
-                } else {                                            //if not
-                    waitingRoom.put(data[0], p);                    //add to waiting room
+                try {
+                    Passenger p = new Passenger(data[0], data[1], data[2], data[3], checked); //create new passenger from line info
+                    if (checked) {                                      //if they've already checked in
+                        planes.get(data[3]).addPassenger(p);            //add directly to the flight
+                    } else {                                            //if not
+                        waitingRoom.put(data[0], p);                    //add to waiting room
+                    }
+                }catch (InvalidDataException e){
+                    System.out.println("Could not create passenger.\n" + e.getMessage());
+                    System.exit(0);
                 }
                 inputLine = br.readLine();                          //read next line
             }
