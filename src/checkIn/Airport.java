@@ -87,12 +87,16 @@ public class Airport {
                 for (int i = 0; i < data.length; i++) {
                     data[i] = data[i].trim();                       //trim off white space
                 }
-                try {
-                    Flight f = new Flight(data[0], data[1], data[2], Integer.parseInt(data[3]), Integer.parseInt(data[4]), Integer.parseInt(data[5])); //make new flight object using read data
-                    planes.put(data[0], f);                             //put the flight in the map with flight code as ref
-                } catch (InvalidDataException e){
-                    System.out.println("Could not create flight.\n" + e.getMessage());
-                    System.exit(0);
+                if(data.length == 6) {
+                    try {
+                        Flight f = new Flight(data[0], data[1], data[2], Integer.parseInt(data[3]), Integer.parseInt(data[4]), Integer.parseInt(data[5])); //make new flight object using read data
+                        planes.put(data[0], f);                             //put the flight in the map with flight code as ref
+                    } catch (InvalidDataException e) {
+                        System.out.println("Could not create flight.\n" + e.getMessage());
+                        System.exit(0);
+                    }
+                } else {
+                    System.out.println("Flight data line invalid. Dropping line");
                 }
                 inputLine = br.readLine();                          //read the next line
             }
@@ -126,17 +130,21 @@ public class Airport {
                 for (int i = 0; i < data.length; i++) {
                     data[i] = data[i].trim();                       //trim off white space
                 }
-                Boolean checked = Boolean.parseBoolean(data[4]);    //make checked in into boolean
-                try {
-                    Passenger p = new Passenger(data[0], data[1], data[2], data[3], checked); //create new passenger from line info
-                    if (checked) {                                      //if they've already checked in
-                        planes.get(data[3]).addPassenger(p);            //add directly to the flight
-                    } else {                                            //if not
-                        waitingRoom.put(data[0], p);                    //add to waiting room
+                if(data.length == 5) {
+                    Boolean checked = Boolean.parseBoolean(data[4]);    //make checked in into boolean
+                    try {
+                        Passenger p = new Passenger(data[0], data[1], data[2], data[3], checked); //create new passenger from line info
+                        if (checked) {                                      //if they've already checked in
+                            planes.get(data[3]).addPassenger(p);            //add directly to the flight
+                        } else {                                            //if not
+                            waitingRoom.put(data[0], p);                    //add to waiting room
+                        }
+                    } catch (InvalidDataException e) {
+                        System.out.println("Could not create passenger.\n" + e.getMessage());
+                        System.exit(0);
                     }
-                }catch (InvalidDataException e){
-                    System.out.println("Could not create passenger.\n" + e.getMessage());
-                    System.exit(0);
+                } else {
+                    System.out.println("Data line invalid. Dropping line");
                 }
                 inputLine = br.readLine();                          //read next line
             }

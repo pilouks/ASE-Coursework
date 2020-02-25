@@ -2,6 +2,7 @@ package tests;
 
 import checkIn.Bag;
 import checkIn.Flight;
+import checkIn.InvalidDataException;
 import checkIn.Passenger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -13,7 +14,7 @@ class FlightTest {
     Flight f;
 
     @BeforeEach
-    void setUp(){
+    void setUp() throws InvalidDataException {
         f = new Flight("ED1235", "Edinburgh", "Air France", 4, 250, 25);
         Passenger p1 = new Passenger("RU64532353HA", "Ruddy", "Hannah Catriona", "ED1235", true);
         Bag b1 = new Bag(1, 10);
@@ -42,7 +43,7 @@ class FlightTest {
     }
 
     @Test
-    void testCheckIn(){
+    void testCheckIn() throws InvalidDataException {
         Passenger p = new Passenger("HO53639615JA", "Horgan", "Jamie Caldwell", "ED1235",false);
         assertFalse(p.getCheckedIn());
         f.checkInToFlight(p,100);

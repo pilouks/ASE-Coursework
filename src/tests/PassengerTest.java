@@ -1,6 +1,7 @@
 package tests;
 
 import checkIn.Bag;
+import checkIn.InvalidDataException;
 import checkIn.Passenger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,7 +13,7 @@ class PassengerTest {
     Passenger p;
 
     @BeforeEach
-    void setUp(){
+    void setUp() throws InvalidDataException {
         p = new Passenger("RU64532353HA", "Ruddy", "Hannah Catriona", "PR6523", false);
     }
 

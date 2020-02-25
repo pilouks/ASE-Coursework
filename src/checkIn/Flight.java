@@ -19,7 +19,7 @@ public class Flight {
     private List<Passenger> passengerList;
     // The amount of excess fees associated with the flight, due to extra baggage weight/limit from passenger.
     private double excessFees;
-    
+
     public Flight(String flightCode, String destination, String carrier, int maxPassenger, int maxWeight, int maxVolume) throws InvalidDataException {
         if(invalidFlightCode(flightCode)){
             throw new InvalidDataException("Flight code: "+ flightCode + " is invalid");
