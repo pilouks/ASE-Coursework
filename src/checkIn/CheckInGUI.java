@@ -20,13 +20,16 @@ import javax.swing.*;
 public class CheckInGUI {
 
 	public enum Scene {
-		CHECKIN, USERINFO, BAGCHECK, BAGS, ERROR1, ERROR2, RETURN, EXIT
+		CHECKIN, USERINFO, BAGCHECK, BAGS, ERROR1, ERROR2, RETURN, EXIT, FEES
 	}
 
 	static Scene scene = Scene.CHECKIN;
 
 	int width = 400;
 	int height = 400;
+	
+	double fees;
+	boolean feePaid;
 
 	JFrame frame = new JFrame("GUI");
 	
@@ -45,6 +48,10 @@ public class CheckInGUI {
 	JTextArea bagzTag = new JTextArea("checkIn.Bag depth (cm)");
 	JTextArea surnameTag = new JTextArea("checkIn.Passenger Surname:");
 	JTextArea referenceTag = new JTextArea("checkIn.Flight Reference:");
+	
+	JTextArea feeInfo = new JTextArea("The baggage fee for this flight is: "+fees);
+	JButton acceptFee = new JButton("Accept Fee");
+	JButton declineFee = new JButton("Decline Fee (remove baggage)");
 	
 	JTextField bagx = new JTextField();
 	JTextField bagy = new JTextField();
@@ -99,6 +106,9 @@ public class CheckInGUI {
 		weightkg.setBounds(2*width/4+20, 2*height/10, width/4, height/15);
 		weightkgTag.setBounds(2*width/4+20, 2*height/10-17, width/4, height/15);	
 		confirm.setBounds(width/2+20, height/2, width/4, height/8);
+		feeInfo.setBounds(0, height/4, width, height/5);
+		acceptFee.setBounds(width/4, height/2, width/4-20, height/5);
+		declineFee.setBounds(width/2, height/2, width/4-20, height/5);
 	}
 
 	/*
@@ -165,6 +175,10 @@ public class CheckInGUI {
 				frame.add(weightkgTag);
 				frame.add(confirm);
 				break;
+			case FEES:
+				frame.getContentPane().add(feeInfo);
+				frame.getContentPane().add(acceptFee);
+				frame.getContentPane().add(declineFee);
 		}
 		
 		
@@ -211,6 +225,16 @@ public class CheckInGUI {
 					bag_y = Double.parseDouble(bagy.getText());
 					bag_z = Double.parseDouble(bagz.getText());
 					bag_kg = Double.parseDouble(weightkg.getText());
+					scene = Scene.FEES;
+				}
+				if(e.getSource()==acceptFee) {
+					frame.getContentPane().removeAll();
+					feePaid = true;
+					scene = Scene.BAGCHECK;
+				}
+				if(e.getSource()==declineFee) {
+					frame.getContentPane().removeAll();
+					feePaid = false;
 					scene = Scene.BAGCHECK;
 				}
 				
@@ -228,6 +252,8 @@ public class CheckInGUI {
 		noBags.addActionListener(Listener);
 		enterBagInfo.addActionListener(Listener);
 		confirm.addActionListener(Listener);
+		acceptFee.addActionListener(Listener);
+		declineFee.addActionListener(Listener);
 
 	}
 
@@ -281,8 +307,21 @@ public class CheckInGUI {
 	 * customer refusal to pay and bag should not be added
 	 */
 	public Boolean requestFees(double fee) {
-// to do
-		return true;
+		fees = fee;
+		System.out.println(fees);
+		feeInfo.setText("The baggage fee for this flight is: "+fees);
+		scene = Scene.FEES;
+		paintScene();
+		
+		while (scene==Scene.FEES) {
+			try {
+				Thread.sleep(10);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return feePaid;
 	}
 
 	/*
