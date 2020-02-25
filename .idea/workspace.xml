@@ -3,16 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="2a654c44-2cca-4ffb-8e89-995f7be611f6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ASECoursework/checkIn/Flight.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ASECoursework/checkIn/Flight.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ASECoursework/checkIn/Passenger.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ASECoursework/checkIn/Passenger.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ASECoursework/tests/BagTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ASECoursework/tests/BagTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ASECoursework/tests/FlightTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ASECoursework/tests/FlightTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ASECoursework/tests/PassengerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ASECoursework/tests/PassengerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/checkIn/Airport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/checkIn/Airport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/checkIn/CheckInGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/checkIn/CheckInGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/checkIn/Flight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/checkIn/Flight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/checkIn/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/checkIn/Passenger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/BagTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/BagTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/FlightTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/FlightTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/PassengerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/PassengerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +57,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.FlightTest">
+  <component name="RunManager" selected="Application.Airport">
     <configuration name="Airport" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="checkIn.Airport" />
       <module name="ASECoursework" />
@@ -119,10 +112,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Airport" />
         <item itemvalue="JUnit.FlightTest" />
         <item itemvalue="JUnit.PassengerTest" />
         <item itemvalue="JUnit.BagTest" />
-        <item itemvalue="Application.Airport" />
       </list>
     </recent_temporary>
   </component>
@@ -144,7 +137,8 @@
       <workItem from="1581678200980" duration="10122000" />
       <workItem from="1582039018690" duration="340000" />
       <workItem from="1582133817177" duration="274000" />
-      <workItem from="1582546476126" duration="7236000" />
+      <workItem from="1582546476126" duration="7369000" />
+      <workItem from="1582628431994" duration="503000" />
     </task>
     <servers />
   </component>
@@ -184,38 +178,38 @@
       <screen x="0" y="0" width="1504" height="963" />
     </state>
     <state x="533" y="237" key="FileChooserDialogImpl/0.0.1504.963@0.0.1504.963" timestamp="1580469780165" />
-    <state width="1461" height="256" key="GridCell.Tab.0.bottom" timestamp="1582556015863">
+    <state width="1461" height="388" key="GridCell.Tab.0.bottom" timestamp="1582628925913">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
-    <state width="1461" height="256" key="GridCell.Tab.0.bottom/0.0.1504.963@0.0.1504.963" timestamp="1582556015863" />
-    <state width="1461" height="256" key="GridCell.Tab.0.center" timestamp="1582556015863">
+    <state width="1461" height="388" key="GridCell.Tab.0.bottom/0.0.1504.963@0.0.1504.963" timestamp="1582628925913" />
+    <state width="1461" height="388" key="GridCell.Tab.0.center" timestamp="1582628925912">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
-    <state width="1461" height="256" key="GridCell.Tab.0.center/0.0.1504.963@0.0.1504.963" timestamp="1582556015863" />
-    <state width="1461" height="256" key="GridCell.Tab.0.left" timestamp="1582556015863">
+    <state width="1461" height="388" key="GridCell.Tab.0.center/0.0.1504.963@0.0.1504.963" timestamp="1582628925912" />
+    <state width="1461" height="388" key="GridCell.Tab.0.left" timestamp="1582628925912">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
-    <state width="1461" height="256" key="GridCell.Tab.0.left/0.0.1504.963@0.0.1504.963" timestamp="1582556015863" />
-    <state width="1461" height="256" key="GridCell.Tab.0.right" timestamp="1582556015863">
+    <state width="1461" height="388" key="GridCell.Tab.0.left/0.0.1504.963@0.0.1504.963" timestamp="1582628925912" />
+    <state width="1461" height="388" key="GridCell.Tab.0.right" timestamp="1582628925913">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
-    <state width="1461" height="256" key="GridCell.Tab.0.right/0.0.1504.963@0.0.1504.963" timestamp="1582556015863" />
-    <state width="1461" height="317" key="GridCell.Tab.1.bottom" timestamp="1582555197947">
+    <state width="1461" height="388" key="GridCell.Tab.0.right/0.0.1504.963@0.0.1504.963" timestamp="1582628925913" />
+    <state width="1461" height="317" key="GridCell.Tab.1.bottom" timestamp="1582556154470">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
-    <state width="1461" height="317" key="GridCell.Tab.1.bottom/0.0.1504.963@0.0.1504.963" timestamp="1582555197947" />
-    <state width="1461" height="317" key="GridCell.Tab.1.center" timestamp="1582555197947">
+    <state width="1461" height="317" key="GridCell.Tab.1.bottom/0.0.1504.963@0.0.1504.963" timestamp="1582556154470" />
+    <state width="1461" height="317" key="GridCell.Tab.1.center" timestamp="1582556154469">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
-    <state width="1461" height="317" key="GridCell.Tab.1.center/0.0.1504.963@0.0.1504.963" timestamp="1582555197947" />
-    <state width="1461" height="317" key="GridCell.Tab.1.left" timestamp="1582555197947">
+    <state width="1461" height="317" key="GridCell.Tab.1.center/0.0.1504.963@0.0.1504.963" timestamp="1582556154469" />
+    <state width="1461" height="317" key="GridCell.Tab.1.left" timestamp="1582556154469">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
-    <state width="1461" height="317" key="GridCell.Tab.1.left/0.0.1504.963@0.0.1504.963" timestamp="1582555197947" />
-    <state width="1461" height="317" key="GridCell.Tab.1.right" timestamp="1582555197947">
+    <state width="1461" height="317" key="GridCell.Tab.1.left/0.0.1504.963@0.0.1504.963" timestamp="1582556154469" />
+    <state width="1461" height="317" key="GridCell.Tab.1.right" timestamp="1582556154470">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
-    <state width="1461" height="317" key="GridCell.Tab.1.right/0.0.1504.963@0.0.1504.963" timestamp="1582555197947" />
+    <state width="1461" height="317" key="GridCell.Tab.1.right/0.0.1504.963@0.0.1504.963" timestamp="1582556154470" />
     <state x="254" y="125" key="SettingsEditor" timestamp="1580469795258">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
@@ -228,6 +222,10 @@
       <screen x="0" y="0" width="1504" height="963" />
     </state>
     <state x="524" y="184" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1504.963@0.0.1504.963" timestamp="1582550914068" />
+    <state x="483" y="247" key="extract.method.dialog" timestamp="1582628581365">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state x="483" y="247" key="extract.method.dialog/0.0.1504.963@0.0.1504.963" timestamp="1582628581365" />
     <state x="203" y="102" key="new project wizard" timestamp="1582550127500">
       <screen x="0" y="0" width="1504" height="963" />
     </state>

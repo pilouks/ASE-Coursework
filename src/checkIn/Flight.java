@@ -59,7 +59,7 @@ public class Flight {
     	double flightWeight = sumFlightWeight();
     	double flightSize = sumFlightSize();
         String report = "";
-        report += "FLIGHT REPORT" + "\n";
+        report += "FLIGHT REPORT: " + flightCode + " to " + destination + "\n";
         report += "- Number of passengers checked in: " + passengerList.size() + "\n";
         report += "- Total weight of baggage on flight: " + flightWeight + "\n";
         report += "- Total size of baggage on flight: " + flightSize + "\n";

@@ -70,6 +70,7 @@ public class Airport {
                 }
             }
         } while (running);                                                      //keep running
+        System.exit(0);
     }
 
     /*Will read in flight data from file
@@ -235,7 +236,7 @@ public class Airport {
             BufferedWriter fw = new BufferedWriter(new FileWriter(fileName));           //writer
             fw.write(fullReport);                                                       //write the whole report string
             fw.close();
-            //System.out.println("File written successfully");
+            System.out.println("Report written to: " + fileName);
         } catch (IOException e) {
             e.printStackTrace();
         }
