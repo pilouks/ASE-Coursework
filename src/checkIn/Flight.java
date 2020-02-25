@@ -5,15 +5,22 @@ import java.util.List;
 
 public class Flight {
 
+	// Unique code that differentiates each flight from another, allowing passengers to find the correct flight to check in to.
     private String flightCode;
+    // The destination of the flight
     private String destination;
+    // The carrier of the flight
     private String carrier;
+    // max capacities of the flight, passenger, baggage weight and baggage volume
     private int maxPassenger;
     private int maxWeight;
     private int maxVolume;
+    // A list of all the passengers checked-in to the flight
     private List<Passenger> passengerList;
+    // The amount of excess fees associated with the flight, due to extra baggage weight/limit from passenger.
     private double excessFees;
 
+    // Constructor that make a new flight object. This counts as a seperate plane journey each time it is called.
     public Flight(String flightCode, String destination, String carrier, int maxPassenger, int maxWeight, int maxVolume) {
         this.flightCode = flightCode;
         this.destination = destination;
@@ -26,7 +33,7 @@ public class Flight {
     }
 
 
-    /*Will get the total weights from each passenger on the flight
+    /*Will get the total baggage weight from each passenger on the flight
     * and sum them for use in the report*/
     public double sumFlightWeight(){
     	double totalFlightWeight = 0;
@@ -37,7 +44,7 @@ public class Flight {
         return totalFlightWeight;
     }
 
-    /*Will get the total size from each of the passengers on the
+    /*Will get the total baggage size from each of the passengers on the
     * flight and sum them for use in the report*/
     public double sumFlightSize(){
     	double totalFlightSize = 0;
@@ -49,11 +56,12 @@ public class Flight {
     }
 
     /*Will generate a report on the flight based on:
+    * - The flight code and destination of the flight
     * - Number of passengers checked in
     * - total weight of baggage
     * - total size of baggage
     * - excess baggage fees
-    * - if the flight is over capacity
+    * - if the flight is over capacity and/or over max baggage weight and/or over max baggage volume
     * Will auto format the report into a single string for writing to file*/
     public String report(){
     	double flightWeight = sumFlightWeight();
