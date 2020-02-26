@@ -12,8 +12,6 @@ public class Airport {
     private HashMap<String, Flight> planes;
     private CheckInGUI GUI;
 
-    private int maxBagSize = 5;         //max size a bag can be
-    private int maxBagWeight = 100;     //max weight a bag can be
     private int feePerExtraBag = 25;    //fee for each bag after first
     private int excessBagSize = 3;      //size bag can be before excess fees apply
     private int excessBagWeight = 20;   //weight a bag can be before excess fees apply
@@ -176,12 +174,6 @@ public class Airport {
         } else {                                                            //bag wants added
             double bagVol = info.get(0);                                    //volume is first entry
             double bagWeight = info.get(1);                                 //weight is second
-            while ((bagVol > maxBagSize) || (bagWeight > maxBagWeight)) {   //while bag is over weight or over size
-                GUI.ErrorScreen(3);                              //show error screen (this line wont line up whats that about?)
-                info = GUI.getPassengerBagInfo();                           //re request bag data
-                bagVol = info.get(0);                                       //refresh
-                bagWeight = info.get(1);                                    //refresh
-            }
             double fee = 0.0;                                               //initalise fee counter
             //generate fees
             fee += (bagNumber * feePerExtraBag);                            //fee per bag > 1
