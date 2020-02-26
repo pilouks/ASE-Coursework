@@ -37,14 +37,12 @@ public class Flight {
 
     public Boolean invalidFlightCode(String code){
         if(code.length() == 6){
-            if(Character.isLetter(code.charAt(0)) &&
-                    Character.isLetter(code.charAt(1)) &&
-                    Character.isDigit(code.charAt(2)) &&
-                    Character.isDigit(code.charAt(3)) &&
-                    Character.isDigit(code.charAt(4)) &&
-                    Character.isDigit(code.charAt(5))){
-                return false;
-            }
+            return !Character.isLetter(code.charAt(0)) ||
+                    !Character.isLetter(code.charAt(1)) ||
+                    !Character.isDigit(code.charAt(2)) ||
+                    !Character.isDigit(code.charAt(3)) ||
+                    !Character.isDigit(code.charAt(4)) ||
+                    !Character.isDigit(code.charAt(5));
         }
         return true;
     }
@@ -115,64 +113,11 @@ public class Flight {
     }
 
     //Auto generated getters and setters
-
-    public String getFlightCode() {
-        return flightCode;
-    }
-
-    public void setFlightCode(String flightCode) {
-        this.flightCode = flightCode;
-    }
-
-    public String getDestination() {
-        return destination;
-    }
-
-    public void setDestination(String destination) {
-        this.destination = destination;
-    }
-
-    public String getCarrier() {
-        return carrier;
-    }
-
-    public void setCarrier(String carrier) {
-        this.carrier = carrier;
-    }
-
-    public int getMaxPassenger() {
-        return maxPassenger;
-    }
-
-    public void setMaxPassenger(int maxPassenger) {
-        this.maxPassenger = maxPassenger;
-    }
-
-    public int getMaxWeight() {
-        return maxWeight;
-    }
-
-    public void setMaxWeight(int maxWeight) {
-        this.maxWeight = maxWeight;
-    }
-
-    public int getMaxVolume() {
-        return maxVolume;
-    }
-
-    public void setMaxVolume(int maxVolume) {
-        this.maxVolume = maxVolume;
-    }
-
     public void addPassenger(Passenger p){
         this.passengerList.add(p);
     }
 
     public double getExcessFees() {
         return excessFees;
-    }
-
-    public void setExcessFees(double excessFees) {
-        this.excessFees = excessFees;
     }
 }

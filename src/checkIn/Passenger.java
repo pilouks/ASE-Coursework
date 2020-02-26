@@ -26,20 +26,18 @@ public class Passenger {
 
     public Boolean invalidBookingReference(String ref){
         if(ref.length() == 12){
-            if(Character.isLetter(ref.charAt(0)) &&
-                    Character.isLetter(ref.charAt(1)) &&
-                    Character.isDigit(ref.charAt(2)) &&
-                    Character.isDigit(ref.charAt(3)) &&
-                    Character.isDigit(ref.charAt(4)) &&
-                    Character.isDigit(ref.charAt(5)) &&
-                    Character.isDigit(ref.charAt(6)) &&
-                    Character.isDigit(ref.charAt(7)) &&
-                    Character.isDigit(ref.charAt(8)) &&
-                    Character.isDigit(ref.charAt(9)) &&
-                    Character.isLetter(ref.charAt(10)) &&
-                    Character.isLetter(ref.charAt(11))){
-                return false;
-            }
+            return !Character.isLetter(ref.charAt(0)) ||
+                    !Character.isLetter(ref.charAt(1)) ||
+                    !Character.isDigit(ref.charAt(2)) ||
+                    !Character.isDigit(ref.charAt(3)) ||
+                    !Character.isDigit(ref.charAt(4)) ||
+                    !Character.isDigit(ref.charAt(5)) ||
+                    !Character.isDigit(ref.charAt(6)) ||
+                    !Character.isDigit(ref.charAt(7)) ||
+                    !Character.isDigit(ref.charAt(8)) ||
+                    !Character.isDigit(ref.charAt(9)) ||
+                    !Character.isLetter(ref.charAt(10)) ||
+                    !Character.isLetter(ref.charAt(11));
         }
         return true;
     }
@@ -84,44 +82,15 @@ public class Passenger {
 
 
     //Auto generated getter and setters
-
-    public String getBookingReference() {
-        return bookingReference;
-    }
-
-    public void setBookingReference(String bookingReference) {
-        this.bookingReference = bookingReference;
-    }
-
     public String getLastName() {
         return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getFirstNames() {
-        return firstNames;
-    }
-
-    public void setFirstNames(String firstNames) {
-        this.firstNames = firstNames;
     }
 
     public String getFlightCode() {
         return flightCode;
     }
 
-    public void setFlightCode(String flightCode) {
-        this.flightCode = flightCode;
-    }
-
     public Boolean getCheckedIn() {
         return checkedIn;
-    }
-
-    public void setCheckedIn(Boolean checkedIn) {
-        this.checkedIn = checkedIn;
     }
 }
