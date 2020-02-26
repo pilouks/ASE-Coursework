@@ -35,19 +35,19 @@ public class CheckInGUI {
 	
 	JButton checkIn = new JButton("Check In");
 	JButton exit = new JButton("Exit");
-	JButton noBags = new JButton("No checkIn.Bag");
-	JButton enterBagInfo = new JButton("Enter checkIn.Bag Info");
+	JButton noBags = new JButton("No Bag");
+	JButton enterBagInfo = new JButton("Enter Bag Info");
 	JButton enter = new JButton("Enter");
 	JButton retry = new JButton("Retry");
 	JButton confirm = new JButton("Confirm");
 	
-	JTextArea weightkgTag = new JTextArea("checkIn.Bag weight (kg)");
+	JTextArea weightkgTag = new JTextArea("Bag weight (kg)");
 	JTextArea error = new JTextArea();
-	JTextArea bagxTag = new JTextArea("checkIn.Bag width (cm)");
-	JTextArea bagyTag = new JTextArea("checkIn.Bag height (cm)");
-	JTextArea bagzTag = new JTextArea("checkIn.Bag depth (cm)");
-	JTextArea surnameTag = new JTextArea("checkIn.Passenger Surname:");
-	JTextArea referenceTag = new JTextArea("checkIn.Flight Reference:");
+	JTextArea bagxTag = new JTextArea("Bag width (cm)");
+	JTextArea bagyTag = new JTextArea("Bag height (cm)");
+	JTextArea bagzTag = new JTextArea("Bag depth (cm)");
+	JTextArea surnameTag = new JTextArea("Passenger Surname:");
+	JTextArea referenceTag = new JTextArea("Flight Reference:");
 	
 	JTextArea feeInfo = new JTextArea("The baggage fee for this flight is: "+fees);
 	JButton acceptFee = new JButton("Accept Fee");
@@ -140,12 +140,12 @@ public class CheckInGUI {
 		
 		switch(scene) {
 			case ERROR1:
-				error.setText("checkIn.Flight Reference doesnt exist.");
+				error.setText("Flight Reference doesnt exist.");
 				frame.getContentPane().add(error);
 				frame.getContentPane().add(retry);
 				break;
 			case ERROR2:
-				error.setText("Surname and checkIn.Flight reference dont match");
+				error.setText("Surname and Flight reference dont match");
 				frame.getContentPane().add(error);
 				frame.getContentPane().add(retry);
 				break;
@@ -216,15 +216,20 @@ public class CheckInGUI {
 					scene = Scene.CHECKIN;
 				}
 				if(e.getSource()==enterBagInfo) {
+					bagx.setText("");
+					bagy.setText("");
+					bagz.setText("");
+					weightkg.setText("");
 					frame.getContentPane().removeAll();
 					scene = Scene.BAGS;
 				}
 				if(e.getSource()==confirm) {
-					frame.getContentPane().removeAll();
+					
 					bag_x = Double.parseDouble(bagx.getText());
 					bag_y = Double.parseDouble(bagy.getText());
 					bag_z = Double.parseDouble(bagz.getText());
 					bag_kg = Double.parseDouble(weightkg.getText());
+					frame.getContentPane().removeAll();
 					scene = Scene.FEES;
 				}
 				if(e.getSource()==acceptFee) {
@@ -308,9 +313,9 @@ public class CheckInGUI {
 	 */
 	public Boolean requestFees(double fee) {
 		fees = fee;
-		System.out.println(fees);
+		
 		feeInfo.setText("The baggage fee for this flight is: "+fees);
-		scene = Scene.FEES;
+		
 		paintScene();
 		
 		while (scene==Scene.FEES) {
@@ -326,8 +331,7 @@ public class CheckInGUI {
 
 	/*
 	 * Show an error screen based on error code 0: Generic error 1: Booking code
-	 * could not be found 2: Booking code and last name did not match 3: checkIn.Bag
-	 * dimensions unacceptable 4: Baggage fees unpaid, bag not added
+	 * could not be found 2: Booking code and last name did not match 
 	 *
 	 * Possibly more to come Will return "OK" or something to indicate user wants to
 	 * proceed
